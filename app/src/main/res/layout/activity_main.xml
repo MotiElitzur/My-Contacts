@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.MainActivity">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="contactsAdapter"
+            type="moti.contacts.view.ContactsAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hero_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:setAdapter="@{contactsAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/spinner_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:indeterminate="true"
+            android:visibility="@{contactsAdapter.itemCount > 0 ? View.VISIBLE : View.GONE}"
+            android:layout_gravity="center"
+            style="?android:attr/progressBarStyleLarge"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/loading_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:visibility="@{contactsAdapter.itemCount > 0 ? View.VISIBLE : View.GONE}"
+            android:text="@string/contacts_loading_message"
+            android:textStyle="bold"
+            style="@android:style/TextAppearance.DeviceDefault.Small"
+
+            app:layout_constraintTop_toBottomOf="@id/spinner_loading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

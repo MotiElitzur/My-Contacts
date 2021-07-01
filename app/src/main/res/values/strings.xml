@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Contacts</string>
+
+    <string name="permission_required_alert">Permission Required</string>
+    <string name="contacts_permission_required_info">In order for the app to work properly, you are required to confirm access to your phone contacts.</string>
+    <string name="permission_required_api_30_plus">You need to go to the application settings and give permission to access the contacts.</string>
+    <string name="contacts_loading_message">No contacts yet</string>
+</resources>

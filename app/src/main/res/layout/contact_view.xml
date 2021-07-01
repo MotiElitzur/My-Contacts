@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="contact"
+            type="moti.contacts.model.Contact" />
+
+        <variable
+            name="contactViewModel"
+            type="moti.contacts.viewModel.ContactsViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{()-> contactViewModel.onContactPressed(contact)}">
+
+        <ImageView
+            android:id="@+id/contactImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+
+            android:src="@mipmap/ic_default_avatar"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/contactName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+
+            android:text='@{contact.name}'
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textStyle="bold"
+
+            app:layout_constraintTop_toTopOf="@id/contactImage"
+            app:layout_constraintBottom_toBottomOf="@id/contactImage"
+            app:layout_constraintStart_toEndOf="@id/contactImage"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
