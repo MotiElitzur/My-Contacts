@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
 
             android:indeterminate="true"
-            android:visibility="@{contactsAdapter.itemCount > 0 ? View.VISIBLE : View.GONE}"
+            android:visibility="@{contactsAdapter.itemCount > 0 ? View.GONE : View.VISIBLE}"
             android:layout_gravity="center"
             style="?android:attr/progressBarStyleLarge"
 
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
 
             android:layout_gravity="center"
-            android:visibility="@{contactsAdapter.itemCount > 0 ? View.VISIBLE : View.GONE}"
+            android:visibility="@{contactsAdapter.itemCount > 0 ? View.GONE : View.VISIBLE}"
             android:text="@string/contacts_loading_message"
             android:textStyle="bold"
             style="@android:style/TextAppearance.DeviceDefault.Small"
